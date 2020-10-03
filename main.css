@@ -1,0 +1,29 @@
+body {
+  background-color: #202427;
+}
+
+.container {
+  background-color: #282d31;
+  color: white;
+}
+
+.row-active {
+  background-color: #9e7700;
+}
+
+.row-disabled {
+  color: #444;
+}
+
+#ghost-table th, label {
+  cursor: pointer;
+}
+
+#ghost-table th:hover, #evidence-table tbody tr:hover {
+  background-color: #282d31;
+}
+
+#clear-evidence {
+  font-size: .8rem;
+  width: 50%;
+}

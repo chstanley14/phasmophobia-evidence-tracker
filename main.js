@@ -1,0 +1,210 @@
+$(document).ready(function() {
+    $('input[type="checkbox"]').on('click', updateGhostTable);
+
+    $('#ghost-table th').on('click', function() {
+        updateGhostDescription($(this));
+    });
+
+    $('#clear-evidence').on('click', function() {
+        const $checkboxes = $('input[type="checkbox"]');
+        $checkboxes.prop('checked', false);
+        $checkboxes.prop('disabled', false);
+        $('#evidence-table tr').removeClass('row-disabled');
+       updateGhostTable();
+    });
+});
+
+let getCheckedEvidence = function() {
+    let checkedEvidence = [];
+    $('input[type="checkbox"]:checked').each(function() {
+        checkedEvidence.push($(this).val());
+    });
+    return checkedEvidence;
+}
+
+let updateGhostTable = function() {
+    let ghostObject = getGhostObj();
+    let ghostArray = Object.entries(ghostObject);
+    let evidenceArray = getCheckedEvidence();
+    let evidenceOptions = [];
+
+    $('table tr').removeClass('row-active');
+
+    if (! evidenceArray.length) {
+        return;
+    }
+
+    for (const [ghost, data] of ghostArray) {
+        const $ghostRow = $('#row-' + ghost);
+        const evidence = data.evidence;
+        let hasAllEvidence = true;
+
+        evidenceArray.forEach(function(e) {
+            if (! evidence.includes(e)) {
+                hasAllEvidence = false;
+            }
+        });
+
+        if (hasAllEvidence) {
+            evidenceOptions = evidenceOptions.concat(evidence);
+            $ghostRow.addClass('row-active');
+        }
+    }
+
+    const uniqueEvidence = new Set(evidenceOptions);
+    evidenceOptions = [...uniqueEvidence];
+
+    updateCheckBoxes(evidenceOptions);
+}
+
+let updateCheckBoxes = function(evidenceOptions) {
+
+    $('input[type=checkbox]').prop('disabled', true);
+    $('#evidence-table tbody tr').addClass('row-disabled');
+
+
+    evidenceOptions.forEach(function(e) {
+        $checkbox = $('#check-' + e);
+        $checkbox.prop('disabled', false);
+        $checkbox.closest('tr').removeClass('row-disabled');
+    });
+}
+
+let updateGhostDescription = function(e) {
+    const ghost = e.closest('tr').attr('id').substr(4);
+    const ghostObject = getGhostObj();
+
+    $('#ghost-name').text(capitalizeFirstLetter(ghost));
+    $('#ghost-description').text(ghostObject[ghost].description);
+    $('#ghost-strength').text(ghostObject[ghost].strength);
+    $('#ghost-weakness').text(ghostObject[ghost].weakness);
+}
+
+let getGhostObj = function() {
+    return {
+        'spirit': {
+            'evidence': [
+                'spirit-box',
+                'fingerprints',
+                'ghost-writing',
+            ],
+            'description': 'These are the most common ghosts you will come across but still they are powerful and dangerous. You can usually discover them at one of their hunting grounds after an unexplained death.',
+            'strength': 'Nothing.',
+            'weakness': 'Smudge Sticks to stop it from attacking for a long period of time.',
+        },
+        'wraith': {
+            'evidence': [
+                'spirit-box',
+                'fingerprints',
+                'freezing-temp',
+            ],
+            'description': 'They are some of the most dangerous ghosts you will find. They are the only ghosts who can travel through walls and has the ability to fight.',
+            'strength': 'They never touch the ground, so they can’t be tracked by footsteps..',
+            'weakness': 'Wraiths have a toxic reaction to salt.',
+        },
+        'phantom': {
+            'evidence': [
+                'freezing-temp',
+                'emf',
+                'ghost-orbs',
+            ],
+            'description': 'A phantom ghost can possess the living, and most commonly summoned through an Ouija Board. It also includes fear into those around it.',
+            'strength': 'If you look at a phantom directly your sanity will drop faster.',
+            'weakness': 'You can take a picture of the phantom to make it disappear.',
+        },
+        'poltergeist': {
+            'evidence': [
+                'spirit-box',
+                'fingerprints',
+                'ghost-orbs',
+            ],
+            'description': 'The most famous ghost Poltergeist known to be a noisemaker by manipulating objects around them to instill fear among its victims.',
+            'strength': 'Throw a huge amount of objects at once.',
+            'weakness': 'Ineffective in an empty room as there will no objects to toss around.',
+        },
+        'banshee': {
+            'evidence': [
+                'fingerprints',
+                'freezing-temp',
+                'emf',
+            ],
+            'description': 'These ghosts are natural hunters who love to stalk it’s prey one at a time making its kill. Banshee will attack anything that comes in its way.',
+            'strength': 'Will target one persona at a time.',
+            'weakness': 'Fears crucifix and will be less aggressive near one.',
+        },
+        'jinn': {
+            'evidence': [
+                'spirit-box',
+                'emf',
+                'ghost-orbs',
+            ],
+            'description': 'These are territorial ghosts that will attack when they feel threatened. Jinn travels faster than most of the ghosts at a significant speed.',
+            'strength': 'Will travel faster if the victim is far away.',
+            'weakness': 'Turning off the location’s power source will prevent Jinn from using its ability.',
+        },
+        'mare': {
+            'evidence': [
+                'spirit-box',
+                'freezing-temp',
+                'ghost-orbs',
+            ],
+            'description': 'These ghosts are the source of all the nightmare the victims see, making it the most powerful ghost in the dark.',
+            'strength': 'Increased chance to attack in the dark',
+            'weakness': 'Turning the lights on around the Mare will lower its chance to attack.',
+        },
+        'revenant': {
+            'evidence': [
+                'fingerprints',
+                'ghost-writing',
+                'emf',
+            ],
+            'description': 'They are slow but violent ghosts that will attack everyone indiscriminately. They also travel at a greater speed like Jinn while hunting.',
+            'strength': 'Travels faster while hunting.',
+            'weakness': 'If you are hidden from the Revenant, their speed drops, and they travel slowly.',
+        },
+        'shade': {
+            'evidence': [
+                'ghost-writing',
+                'emf',
+                'ghost-orbs',
+            ],
+            'description': 'These are shy ghosts and will stop all activity if there are more than one person nearby.',
+            'strength': 'Harder to find.',
+            'weakness': 'Not go into hunting mode if there are multiple people nearby.',
+        },
+        'demon': {
+            'evidence': [
+                'spirit-box',
+                'ghost-writing',
+                'freezing-temp',
+            ],
+            'description': 'These are the worst ghosts you can encounter. They will attack you without any reason.',
+            'strength': 'Attacks more often than any other ghost.',
+            'weakness': 'Asking a successful question on the Ouija board won’t lower sanity.',
+        },
+        'yurei': {
+            'evidence': [
+                'ghost-writing',
+                'freezing-temp',
+                'ghost-orbs',
+            ],
+            'description': 'They have returned to the physical world to take revenge or have a deep hatred for a victim.',
+            'strength': 'Stronger effect on people’s sanity.',
+            'weakness': 'Smudging the Yurei room will cause it to not wander around the location for a long time.',
+        },
+        'oni': {
+            'evidence': [
+                'spirit-box',
+                'ghost-writing',
+                'emf',
+            ],
+            'description': 'Oni’s are the cousin of demons and are extremely strong. They will become more active if you wander around them for too long.',
+            'strength': 'More active when players are nearby or when objects move at great speed.',
+            'weakness': 'Being more active helps players to easily identify the Oni.',
+        },
+    }
+}
+
+let capitalizeFirstLetter = function(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}

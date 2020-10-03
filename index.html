@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <title>Phasmophobia Evidence Tracker</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">Phasmophobia Evidence Tracker</h1>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-3">
+                <table id="evidence-table" class="table table-dark table-bordered table-sm text-center">
+
+                    <thead>
+                        <tr>
+                            <th colspan="2">Evidence</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td><label for="check-spirit-box" class="mb-0">Spirit Box</label></td>
+                            <td><input type="checkbox" name="check-spirit-box" id="check-spirit-box" value="spirit-box"></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="check-fingerprints" class="mb-0">Fingerprints</label></td>
+                            <td><input type="checkbox" name="check-fingerprints" id="check-fingerprints" value="fingerprints"></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="check-ghost-writing" class="mb-0">Ghost Writing</label></td>
+                            <td><input type="checkbox" name="check-ghost-writing" id="check-ghost-writing" value="ghost-writing"></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="check-freezing-temp" class="mb-0">Freezing Temperature</label></td>
+                            <td><input type="checkbox" name="check-freezing-temp" id="check-freezing-temp" value="freezing-temp"></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="check-emf" class="mb-0">EMF 5</label></td>
+                            <td><input type="checkbox" name="check-emf" id="check-emf" value="emf"></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="check-ghost-orbs" class="mb-0">Ghost Orbs</label></td>
+                            <td><input type="checkbox" name="check-ghost-orbs" id="check-ghost-orbs" value="ghost-orbs"></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                <button id="clear-evidence" type="button" class="btn btn-sm btn-warning py-1">Clear</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="col-9">
+                <h2 id="ghost-name">Spirit</h2>
+                <div id="ghost-description">
+                    These are the most common ghosts you will come across but still they are powerful and dangerous. You can usually discover them at one of their hunting grounds after an unexplained death.
+                </div>
+                <h3 class="mt-2">Strength</h3>
+                <div id="ghost-strength">
+                    Nothing
+                </div>
+                <h3 class="mt-2">Weakness</h3>
+                <div id="ghost-weakness">
+                    Smudge Sticks to stop it from attacking for a long period of time.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12">
+                <div id="ghost-table" class="table-responsive">
+                    <table class="table table-dark table-bordered table-sm">
+                        <tbody class="text-center">
+
+                            <tr id="row-spirit">
+                                <th scope="row">Spirit</th>
+                                <td class="col-spirit-box">Spirit Box</td>
+                                <td class="col-fingerprints">Fingerprints</td>
+                                <td class="col-ghost-writing">Ghost Writing</td>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                            </tr>
+
+                            <tr id="row-wraith">
+                                <th scope="row">Wraith</th>
+                                <td class="col-spirit-box">Spirit Box</td>
+                                <td class="col-fingerprints">Fingerprints</td>
+                                <td class="col-empty"></td>
+                                <td class="col-freezing-temp">Freezing Temperature</td>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                            </tr>
+
+                            <tr id="row-phantom">
+                                <th scope="row">Phantom</th>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                                <td class="col-freezing-temp">Freezing Temperature</td>
+                                <td class="col-emf">EMF 5</td>
+                                <td class="col-ghost-orbs">Ghost Orbs</td>
+                            </tr>
+
+                            <tr id="row-poltergeist">
+                                <th scope="row">Poltergeist</th>
+                                <td class="col-spirit-box">Spirit Box</td>
+                                <td class="col-fingerprints">Fingerprints</td>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                                <td class="col-ghost-orbs">Ghost Orbs</td>
+                            </tr>
+
+                            <tr id="row-banshee">
+                                <th scope="row">Banshee</th>
+                                <td class="col-empty"></td>
+                                <td class="col-fingerprints">Fingerprints</td>
+                                <td class="col-empty"></td>
+                                <td class="col-freezing-temp">Freezing Temperature</td>
+                                <td class="col-emf">EMF 5</td>
+                                <td class="col-empty"></td>
+                            </tr>
+
+                            <tr id="row-jinn">
+                                <th scope="row">Jinn</th>
+                                <td class="col-spirit-box">Spirit Box</td>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                                <td class="col-emf">EMF 5</td>
+                                <td class="col-ghost-orbs">Ghost Orbs</td>
+                            </tr>
+
+                            <tr id="row-mare">
+                                <th scope="row">Mare</th>
+                                <td class="col-spirit-box">Spirit Box</td>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                                <td class="col-freezing-temp">Freezing Temperature</td>
+                                <td class="col-empty"></td>
+                                <td class="col-ghost-orbs">Ghost Orbs</td>
+                            </tr>
+
+                            <tr id="row-revenant">
+                                <th scope="row">Revenant</th>
+                                <td class="col-empty"></td>
+                                <td class="col-fingerprints">Fingerprints</td>
+                                <td class="col-ghost-writing">Ghost Writing</td>
+                                <td class="col-empty"></td>
+                                <td class="col-emf">EMF 5</td>
+                                <td class="col-empty"></td>
+                            </tr>
+
+                            <tr id="row-shade">
+                                <th scope="row">Shade</th>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                                <td class="col-ghost-writing">Ghost Writing</td>
+                                <td class="col-empty"></td>
+                                <td class="col-emf">EMF 5</td>
+                                <td class="col-ghost-orbs">Ghost Orbs</td>
+                            </tr>
+
+                            <tr id="row-demon">
+                                <th scope="row">Demon</th>
+                                <td class="col-spirit-box">Spirit Box</td>
+                                <td class="col-empty"></td>
+                                <td class="col-ghost-writing">Ghost Writing</td>
+                                <td class="col-freezing-temp">Freezing Temperature</td>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                            </tr>
+
+                            <tr id="row-yurei">
+                                <th scope="row">Yurei</th>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                                <td class="col-ghost-writing">Ghost Writing</td>
+                                <td class="col-freezing-temp">Freezing Temperature</td>
+                                <td class="col-empty"></td>
+                                <td class="col-ghost-orbs">Ghost Orbs</td>
+                            </tr>
+
+                            <tr id="row-oni">
+                                <th scope="row">Oni</th>
+                                <td class="col-spirit-box">Spirit Box</td>
+                                <td class="col-empty"></td>
+                                <td class="col-ghost-writing">Ghost Writing</td>
+                                <td class="col-empty"></td>
+                                <td class="col-emf">EMF 5</td>
+                                <td class="col-empty"></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>
