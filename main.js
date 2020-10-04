@@ -1,31 +1,47 @@
 $(document).ready(function() {
+    // Check evidence box click event.
     $('input[type="checkbox"]').on('click', updateGhostTable);
 
+    // Clear evidence click event.
+    $('#clear-evidence').on('click', clearEvidence);
+
+    // Update ghost description click event.
     $('#ghost-table th').on('click', function() {
         updateGhostDescription($(this));
     });
-
-    $('#clear-evidence').on('click', function() {
-        const $checkboxes = $('input[type="checkbox"]');
-        $checkboxes.prop('checked', false);
-        $checkboxes.prop('disabled', false);
-        $('#evidence-table tr').removeClass('row-disabled');
-       updateGhostTable();
-    });
 });
 
-let getCheckedEvidence = function() {
+/**
+ * Clear evidence table and reset ghost table.
+ */
+const clearEvidence = function() {
+    const $checkboxes = $('input[type="checkbox"]');
+    $checkboxes.prop('checked', false);
+    $checkboxes.prop('disabled', false);
+    $('#evidence-table tr').removeClass('row-disabled');
+    updateGhostTable();
+}
+
+/**
+ * Get all currently checked evidence.
+ * @return {array} Array of checked evidence.
+ */
+const getCheckedEvidence = function() {
     let checkedEvidence = [];
     $('input[type="checkbox"]:checked').each(function() {
         checkedEvidence.push($(this).val());
     });
+
     return checkedEvidence;
 }
 
-let updateGhostTable = function() {
-    let ghostObject = getGhostObj();
-    let ghostArray = Object.entries(ghostObject);
-    let evidenceArray = getCheckedEvidence();
+/**
+ * Update the ghost table to highlight possible ghosts.
+ */
+const updateGhostTable = function() {
+    const ghostObject = getGhostObj();
+    const ghostArray = Object.entries(ghostObject);
+    const evidenceArray = getCheckedEvidence();
     let evidenceOptions = [];
 
     $('table tr').removeClass('row-active');
@@ -57,11 +73,13 @@ let updateGhostTable = function() {
     updateCheckBoxes(evidenceOptions);
 }
 
-let updateCheckBoxes = function(evidenceOptions) {
-
+/**
+ * Enable/disable checkboxes depending on if the evidence is eligible based on remaining possible ghosts.
+ * @param {array} evidenceOptions
+ */
+const updateCheckBoxes = function(evidenceOptions) {
     $('input[type=checkbox]').prop('disabled', true);
     $('#evidence-table tbody tr').addClass('row-disabled');
-
 
     evidenceOptions.forEach(function(e) {
         $checkbox = $('#check-' + e);
@@ -70,7 +88,11 @@ let updateCheckBoxes = function(evidenceOptions) {
     });
 }
 
-let updateGhostDescription = function(e) {
+/**
+ * Updates the ghost description based on the passed in jQuery object.
+ * @param {jQuery} e
+ */
+const updateGhostDescription = function(e) {
     const ghost = e.closest('tr').attr('id').substr(4);
     const ghostObject = getGhostObj();
 
@@ -80,7 +102,11 @@ let updateGhostDescription = function(e) {
     $('#ghost-weakness').text(ghostObject[ghost].weakness);
 }
 
-let getGhostObj = function() {
+/**
+ * Returns ghost data object.
+ * @return {object}
+ */
+const getGhostObj = function() {
     return {
         'spirit': {
             'evidence': [
@@ -205,6 +231,11 @@ let getGhostObj = function() {
     }
 }
 
-let capitalizeFirstLetter = function(word) {
+/**
+ * Utility function used to capitalize the first letter of a passed in string.
+ * @param {string} word
+ * @return {string}
+ */
+const capitalizeFirstLetter = function(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
