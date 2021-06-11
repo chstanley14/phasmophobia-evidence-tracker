@@ -228,6 +228,26 @@ const getGhostObj = function() {
             'strength': 'More active when players are nearby or when objects move at great speed.',
             'weakness': 'Being more active helps players to easily identify the Oni.',
         },
+        'yokai': {
+            'evidence': [
+                'spirit-box',
+                'ghost-writing',
+                'ghost-orbs',
+            ],
+            'description': 'A Yokai is a common type of ghost that is attracted to human voices. They can usually be found haunting family homes.',
+            'strength': 'Talking near a Yokai will anger it and increase it\'s chance of attacking.',
+            'weakness': 'When hunting a Yokai can only hear voices close to it.',
+        },
+        'hantu': {
+            'evidence': [
+                'fingerprints',
+                'ghost-writing',
+                'ghost-orbs',
+            ],
+            'description': 'A Hantu is a rare ghost that can be found in hot climates. They are known to attack often during cold weather.',
+            'strength': 'Lower temperatures can cause the Hantu to move at faster speeds.',
+            'weakness': 'A Hantu will move slower in warmer areas.',
+        },
     }
 }
 
