@@ -45,6 +45,7 @@ const updateGhostTable = function() {
     let evidenceOptions = [];
 
     $('table tr').removeClass('row-active');
+    $('table td').removeClass('lastEvidence');
 
     if (! evidenceArray.length) {
         return;
@@ -64,6 +65,17 @@ const updateGhostTable = function() {
         if (hasAllEvidence) {
             evidenceOptions = evidenceOptions.concat(evidence);
             $ghostRow.addClass('row-active');
+
+            if ($('input:checkbox:checked').length === 2) {
+
+                $('input[type="checkbox"]:checkbox:not(":checked")').each(function(k, v) {
+                    if ($ghostRow.find('td').hasClass('col-' + $(v).val())) {
+                        $ghostRow.find('.col-' + $(v).val()).addClass('lastEvidence');
+                    }
+                });
+
+
+            }
         }
     }
 
