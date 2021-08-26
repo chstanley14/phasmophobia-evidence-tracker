@@ -70,6 +70,11 @@
                         </tr>
 
                         <tr>
+                            <td><label for="check-dots" class="mb-0">DOTS</label></td>
+                            <td><input type="checkbox" name="check-dots" id="check-dots" value="dots"></td>
+                        </tr>
+
+                        <tr>
                             <td colspan="2">
                                 <button id="clear-evidence" type="button" class="btn btn-sm btn-warning py-1">Clear</button>
                             </td>
@@ -106,9 +111,10 @@
                             <tr id="row-spirit">
                                 <th scope="row">Spirit</th>
                                 <td class="col-spirit-box">Spirit Box</td>
-                                <td class="col-fingerprints">Fingerprints</td>
+                                <td class="col-empty"></td>
                                 <td class="col-ghost-writing">Ghost Writing</td>
                                 <td class="col-empty"></td>
+                                <td class="col-emf">EMF 5</td>
                                 <td class="col-empty"></td>
                                 <td class="col-empty"></td>
                             </tr>
@@ -116,31 +122,34 @@
                             <tr id="row-wraith">
                                 <th scope="row">Wraith</th>
                                 <td class="col-spirit-box">Spirit Box</td>
-                                <td class="col-fingerprints">Fingerprints</td>
-                                <td class="col-empty"></td>
-                                <td class="col-freezing-temp">Freezing Temperature</td>
                                 <td class="col-empty"></td>
                                 <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                                <td class="col-emf">EMF 5</td>
+                                <td class="col-empty"></td>
+                                <td class="col-dots">DOTS</td>
                             </tr>
 
                             <tr id="row-phantom">
                                 <th scope="row">Phantom</th>
+                                <td class="col-spirit-box">Spirit Box</td>
+                                <td class="col-fingerprints">Fingerprints</td>
                                 <td class="col-empty"></td>
                                 <td class="col-empty"></td>
                                 <td class="col-empty"></td>
-                                <td class="col-freezing-temp">Freezing Temperature</td>
-                                <td class="col-emf">EMF 5</td>
-                                <td class="col-ghost-orbs">Ghost Orbs</td>
+                                <td class="col-empty"></td>
+                                <td class="col-dots">DOTS</td>
                             </tr>
 
                             <tr id="row-poltergeist">
                                 <th scope="row">Poltergeist</th>
                                 <td class="col-spirit-box">Spirit Box</td>
                                 <td class="col-fingerprints">Fingerprints</td>
+                                <td class="col-ghost-writing">Ghost Writing</td>
                                 <td class="col-empty"></td>
                                 <td class="col-empty"></td>
                                 <td class="col-empty"></td>
-                                <td class="col-ghost-orbs">Ghost Orbs</td>
+                                <td class="col-empty"></td>
                             </tr>
 
                             <tr id="row-banshee">
@@ -148,38 +157,42 @@
                                 <td class="col-empty"></td>
                                 <td class="col-fingerprints">Fingerprints</td>
                                 <td class="col-empty"></td>
-                                <td class="col-freezing-temp">Freezing Temperature</td>
-                                <td class="col-emf">EMF 5</td>
                                 <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                                <td class="col-ghost-orbs">Ghost Orbs</td>
+                                <td class="col-dots">DOTS</td>
                             </tr>
 
                             <tr id="row-jinn">
                                 <th scope="row">Jinn</th>
-                                <td class="col-spirit-box">Spirit Box</td>
                                 <td class="col-empty"></td>
+                                <td class="col-fingerprints">Fingerprints</td>
                                 <td class="col-empty"></td>
-                                <td class="col-empty"></td>
+                                <td class="col-freezing-temp">Freezing Temperature</td>
                                 <td class="col-emf">EMF 5</td>
-                                <td class="col-ghost-orbs">Ghost Orbs</td>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
                             </tr>
 
                             <tr id="row-mare">
                                 <th scope="row">Mare</th>
                                 <td class="col-spirit-box">Spirit Box</td>
                                 <td class="col-empty"></td>
+                                <td class="col-ghost-writing">Ghost Writing</td>
                                 <td class="col-empty"></td>
-                                <td class="col-freezing-temp">Freezing Temperature</td>
                                 <td class="col-empty"></td>
                                 <td class="col-ghost-orbs">Ghost Orbs</td>
+                                <td class="col-empty"></td>
                             </tr>
 
                             <tr id="row-revenant">
                                 <th scope="row">Revenant</th>
                                 <td class="col-empty"></td>
-                                <td class="col-fingerprints">Fingerprints</td>
-                                <td class="col-ghost-writing">Ghost Writing</td>
                                 <td class="col-empty"></td>
-                                <td class="col-emf">EMF 5</td>
+                                <td class="col-ghost-writing">Ghost Writing</td>
+                                <td class="col-freezing-temp">Freezing Temperature</td>
+                                <td class="col-empty"></td>
+                                <td class="col-ghost-orbs">Ghost Orbs</td>
                                 <td class="col-empty"></td>
                             </tr>
 
@@ -188,17 +201,19 @@
                                 <td class="col-empty"></td>
                                 <td class="col-empty"></td>
                                 <td class="col-ghost-writing">Ghost Writing</td>
-                                <td class="col-empty"></td>
+                                <td class="col-freezing-temp">Freezing Temperature</td>
                                 <td class="col-emf">EMF 5</td>
-                                <td class="col-ghost-orbs">Ghost Orbs</td>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
                             </tr>
 
                             <tr id="row-demon">
                                 <th scope="row">Demon</th>
-                                <td class="col-spirit-box">Spirit Box</td>
                                 <td class="col-empty"></td>
+                                <td class="col-fingerprints">Fingerprints</td>
                                 <td class="col-ghost-writing">Ghost Writing</td>
                                 <td class="col-freezing-temp">Freezing Temperature</td>
+                                <td class="col-empty"></td>
                                 <td class="col-empty"></td>
                                 <td class="col-empty"></td>
                             </tr>
@@ -207,40 +222,66 @@
                                 <th scope="row">Yurei</th>
                                 <td class="col-empty"></td>
                                 <td class="col-empty"></td>
-                                <td class="col-ghost-writing">Ghost Writing</td>
+                                <td class="col-empty"></td>
                                 <td class="col-freezing-temp">Freezing Temperature</td>
                                 <td class="col-empty"></td>
                                 <td class="col-ghost-orbs">Ghost Orbs</td>
+                                <td class="col-dots">DOTS</td>
                             </tr>
 
                             <tr id="row-oni">
                                 <th scope="row">Oni</th>
-                                <td class="col-spirit-box">Spirit Box</td>
                                 <td class="col-empty"></td>
-                                <td class="col-ghost-writing">Ghost Writing</td>
                                 <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                                <td class="col-freezing-temp">Freezing Temperature</td>
                                 <td class="col-emf">EMF 5</td>
                                 <td class="col-empty"></td>
+                                <td class="col-dots">DOTS</td>
                             </tr>
 
                             <tr id="row-yokai">
                                 <th scope="row">Yokai</th>
                                 <td class="col-spirit-box">Spirit Box</td>
                                 <td class="col-empty"></td>
-                                <td class="col-ghost-writing">Ghost Writing</td>
+                                <td class="col-empty"></td>
                                 <td class="col-empty"></td>
                                 <td class="col-empty"></td>
                                 <td class="col-ghost-orbs">Ghost Orbs</td>
+                                <td class="col-dots">DOTS</td>
                             </tr>
 
                             <tr id="row-hantu">
                                 <th scope="row">Hantu</th>
                                 <td class="col-empty"></td>
                                 <td class="col-fingerprints">Fingerprints</td>
-                                <td class="col-ghost-writing">Ghost Writing</td>
                                 <td class="col-empty"></td>
+                                <td class="col-freezing-temp">Freezing Temperature</td>
                                 <td class="col-empty"></td>
                                 <td class="col-ghost-orbs">Ghost Orbs</td>
+                                <td class="col-empty"></td>
+                            </tr>
+
+                            <tr id="row-goryo">
+                                <th scope="row">Goryo</th>
+                                <td class="col-empty"></td>
+                                <td class="col-fingerprints">Fingerprints</td>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
+                                <td class="col-emf">EMF 5</td>
+                                <td class="col-empty"></td>
+                                <td class="col-dots">DOTS</td>
+                            </tr>
+
+                            <tr id="row-myling">
+                                <th scope="row">Myling</th>
+                                <td class="col-empty"></td>
+                                <td class="col-fingerprints">Fingerprints</td>
+                                <td class="col-ghost-writing">Ghost Writing</td>
+                                <td class="col-empty"></td>
+                                <td class="col-emf">EMF 5</td>
+                                <td class="col-empty"></td>
+                                <td class="col-empty"></td>
                             </tr>
 
                         </tbody>

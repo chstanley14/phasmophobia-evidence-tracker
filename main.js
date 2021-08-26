@@ -122,8 +122,8 @@ const getGhostObj = function() {
     return {
         'spirit': {
             'evidence': [
+                'emf',
                 'spirit-box',
-                'fingerprints',
                 'ghost-writing',
             ],
             'description': 'These are the most common ghosts you will come across but still they are powerful and dangerous. You can usually discover them at one of their hunting grounds after an unexplained death.',
@@ -133,8 +133,8 @@ const getGhostObj = function() {
         'wraith': {
             'evidence': [
                 'spirit-box',
-                'fingerprints',
-                'freezing-temp',
+                'emf',
+                'dots',
             ],
             'description': 'They are some of the most dangerous ghosts you will find. They are the only ghosts who can travel through walls and has the ability to fight.',
             'strength': 'They never touch the ground, so they can’t be tracked by footsteps..',
@@ -142,9 +142,9 @@ const getGhostObj = function() {
         },
         'phantom': {
             'evidence': [
-                'freezing-temp',
-                'emf',
-                'ghost-orbs',
+                'spirit-box',
+                'fingerprints',
+                'dots',
             ],
             'description': 'A phantom ghost can possess the living, and most commonly summoned through an Ouija Board. It also includes fear into those around it.',
             'strength': 'If you look at a phantom directly your sanity will drop faster.',
@@ -154,7 +154,7 @@ const getGhostObj = function() {
             'evidence': [
                 'spirit-box',
                 'fingerprints',
-                'ghost-orbs',
+                'ghost-writing',
             ],
             'description': 'The most famous ghost Poltergeist known to be a noisemaker by manipulating objects around them to instill fear among its victims.',
             'strength': 'Throw a huge amount of objects at once.',
@@ -163,8 +163,8 @@ const getGhostObj = function() {
         'banshee': {
             'evidence': [
                 'fingerprints',
-                'freezing-temp',
-                'emf',
+                'ghost-orbs',
+                'dots',
             ],
             'description': 'These ghosts are natural hunters who love to stalk it’s prey one at a time making its kill. Banshee will attack anything that comes in its way.',
             'strength': 'Will target one persona at a time.',
@@ -172,9 +172,9 @@ const getGhostObj = function() {
         },
         'jinn': {
             'evidence': [
-                'spirit-box',
                 'emf',
-                'ghost-orbs',
+                'fingerprints',
+                'freezing-temp',
             ],
             'description': 'These are territorial ghosts that will attack when they feel threatened. Jinn travels faster than most of the ghosts at a significant speed.',
             'strength': 'Will travel faster if the victim is far away.',
@@ -183,7 +183,7 @@ const getGhostObj = function() {
         'mare': {
             'evidence': [
                 'spirit-box',
-                'freezing-temp',
+                'ghost-writing',
                 'ghost-orbs',
             ],
             'description': 'These ghosts are the source of all the nightmare the victims see, making it the most powerful ghost in the dark.',
@@ -192,9 +192,9 @@ const getGhostObj = function() {
         },
         'revenant': {
             'evidence': [
-                'fingerprints',
+                'ghost-orbs',
                 'ghost-writing',
-                'emf',
+                'freezing-temp',
             ],
             'description': 'They are slow but violent ghosts that will attack everyone indiscriminately. They also travel at a greater speed like Jinn while hunting.',
             'strength': 'Travels faster while hunting.',
@@ -204,7 +204,7 @@ const getGhostObj = function() {
             'evidence': [
                 'ghost-writing',
                 'emf',
-                'ghost-orbs',
+                'freezing-temp',
             ],
             'description': 'These are shy ghosts and will stop all activity if there are more than one person nearby.',
             'strength': 'Harder to find.',
@@ -212,7 +212,7 @@ const getGhostObj = function() {
         },
         'demon': {
             'evidence': [
-                'spirit-box',
+                'fingerprints',
                 'ghost-writing',
                 'freezing-temp',
             ],
@@ -222,7 +222,7 @@ const getGhostObj = function() {
         },
         'yurei': {
             'evidence': [
-                'ghost-writing',
+                'dots',
                 'freezing-temp',
                 'ghost-orbs',
             ],
@@ -232,8 +232,8 @@ const getGhostObj = function() {
         },
         'oni': {
             'evidence': [
-                'spirit-box',
-                'ghost-writing',
+                'freezing-temp',
+                'dots',
                 'emf',
             ],
             'description': 'Oni’s are the cousin of demons and are extremely strong. They will become more active if you wander around them for too long.',
@@ -243,7 +243,7 @@ const getGhostObj = function() {
         'yokai': {
             'evidence': [
                 'spirit-box',
-                'ghost-writing',
+                'dots',
                 'ghost-orbs',
             ],
             'description': 'A Yokai is a common type of ghost that is attracted to human voices. They can usually be found haunting family homes.',
@@ -253,12 +253,32 @@ const getGhostObj = function() {
         'hantu': {
             'evidence': [
                 'fingerprints',
-                'ghost-writing',
+                'freezing-temp',
                 'ghost-orbs',
             ],
             'description': 'A Hantu is a rare ghost that can be found in hot climates. They are known to attack often during cold weather.',
             'strength': 'Lower temperatures can cause the Hantu to move at faster speeds.',
             'weakness': 'A Hantu will move slower in warmer areas.',
+        },
+        'goryo': {
+            'evidence': [
+                'emf',
+                'fingerprints',
+                'dots',
+            ],
+            'description': 'N/A',
+            'strength': 'N/A',
+            'weakness': 'N/A',
+        },
+        'myling': {
+            'evidence': [
+                'fingerprints',
+                'emf',
+                'ghost-writing',
+            ],
+            'description': 'N/A',
+            'strength': 'N/A',
+            'weakness': 'N/A',
         },
     }
 }
