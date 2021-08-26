@@ -266,9 +266,9 @@ const getGhostObj = function() {
                 'fingerprints',
                 'dots',
             ],
-            'description': 'N/A',
-            'strength': 'N/A',
-            'weakness': 'N/A',
+            'description': 'Using a video camera is the only way to view a Goryo, when it passes through a DOTS projector.',
+            'strength': 'A Goryo will usually only show itself on camera if there are no people nearby.',
+            'weakness': 'They are rarely seen far from their place of death.',
         },
         'myling': {
             'evidence': [
@@ -276,9 +276,9 @@ const getGhostObj = function() {
                 'emf',
                 'ghost-writing',
             ],
-            'description': 'N/A',
-            'strength': 'N/A',
-            'weakness': 'N/A',
+            'description': 'A Myling is a very vocal and active ghost. They are rumoured to be quiet when hunting their prey.',
+            'strength': 'A Myling is known to be quieter when hunting.',
+            'weakness': 'Mylings more frequently make paranormal sounds.',
         },
     }
 }
