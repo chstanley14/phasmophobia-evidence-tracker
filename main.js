@@ -108,7 +108,7 @@ const updateGhostDescription = function(e) {
     const ghost = e.closest('tr').attr('id').substr(4);
     const ghostObject = getGhostObj();
 
-    $('#ghost-name').text(capitalizeFirstLetter(ghost));
+    $('#ghost-name').text(convertToTitleCase(ghost));
     $('#ghost-description').text(ghostObject[ghost].description);
     $('#ghost-strength').text(ghostObject[ghost].strength);
     $('#ghost-weakness').text(ghostObject[ghost].weakness);
@@ -280,6 +280,56 @@ const getGhostObj = function() {
             'strength': 'A Myling is known to be quieter when hunting.',
             'weakness': 'Mylings more frequently make paranormal sounds.',
         },
+        'the-twins': {
+            'evidence': [
+                'emf',
+                'spirit-box',
+                'freezing-temp',
+            ],
+            'description': 'These ghosts have been reported to mimic each other\'s actions. They alternate their attacks to confuse their prey.',
+            'strength': 'Either Twin can be angered and initiate an attack on their prey.',
+            'weakness': 'The Twins will often interact with the environment at the same time.',
+        },
+        'onryo': {
+            'evidence': [
+                'spirit-box',
+                'freezing-temp',
+                'ghost-orbs',
+            ],
+            'description': 'The Onryo is often referred to as "The Wraithful Spirit". It steals souls from dying victims\' bodies to seek revenge. This ghost has been known to fear any form of fire, and will do anything to be far from it.',
+            'strength': 'Extinguishing a flame can cause an Onryo to attack.',
+            'weakness': 'When threatened, this ghost will be less likely to hunt.',
+        },
+        'obake': {
+            'evidence': [
+                'emf',
+                'fingerprints',
+                'ghost-orbs',
+            ],
+            'description': 'Obake are terrifying shape-shifters, capable of taking on many forms. They have been seen taking on humanoid shapes to attrack their prey.',
+            'strength': 'While interacting with the environment, and Obake will rarely leave a trace.',
+            'weakness': 'Sometimes this ghost will shapeshift, leaving behind unique evidence.',
+        },
+        'raiju': {
+            'evidence': [
+                'emf',
+                'ghost-orbs',
+                'dots',
+            ],
+            'description': 'A Raiju is a demon that thrives on electrical current. While generally calm, they can become agitated when overwhelmed with power.',
+            'strength': 'A Raiju can siphon power from nearby electrical devices, making it move faster.',
+            'weakness': 'Raiju are constantly disrupting electronic equipment, making it easier to track when attacking.',
+        },
+        'the-mimic': {
+            'evidence': [
+                'spirit-box',
+                'fingerprints',
+                'freezing-temp',
+            ],
+            'description': 'The mimic is an elusive, mysterious, copycat ghost that mirrors traits and behavior from others, including other ghost types.',
+            'strength': 'We\'re unsure what this ghost is capable of. Be careful.',
+            'weakness': 'Several reports have noted ghost orb sightings near mimics.',
+        },
     }
 }
 
@@ -290,4 +340,15 @@ const getGhostObj = function() {
  */
 const capitalizeFirstLetter = function(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+/**
+ * Utility function to convert a string to Title Case
+ * @param {string} word
+ * @returns {string}
+ */
+const convertToTitleCase = function(word) {
+    return word.toLowerCase().replace(/\s+/g, '-').split('-').map(function(w) {
+        return capitalizeFirstLetter(w);
+    }).join(' ');
 }
