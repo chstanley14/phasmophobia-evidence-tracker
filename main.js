@@ -330,6 +330,51 @@ const getGhostObj = function() {
             'strength': 'We\'re unsure what this ghost is capable of. Be careful.',
             'weakness': 'Several reports have noted ghost orb sightings near mimics.',
         },
+        'moroi': {
+            'evidence': [
+                'freezing-temp',
+                'ghost-writing',
+                'spirit-box',
+            ],
+            'description': 'Moroi have risen from the grave to drain energy from the living. They have been known to place curses on their victims, curable only by antidotes or moving very far away.',
+            'strength': 'Moves noticeably faster at low player sanity.',
+            'weakness': 'Smudge sticks blind the ghost for longer during hunts.',
+        },
+        'deogen': {
+            'evidence': [
+                'dots',
+                'ghost-writing',
+                'spirit-box',
+            ],
+            'description': 'Sometimes surrounded by an endless fog, Deogen have been eluding ghost hunters for years. These ghosts have been reported to find even the most hidden prey, before stalking them into exhaustion.',
+            'strength': 'Always knows where players are during a hunt. Moves at a high speed with no player in sight.',
+            'weakness': 'Significantly slows down when near the player.',
+        },
+        'thaye': {
+            'evidence': [
+                'dots',
+                'ghost-orbs',
+                'ghost-writing',
+            ],
+            'description': 'Thaye have been known to rapidly age over time, even in the afterlife. From what we\'ve learned, they seem to deteriorate faster while within the presence of the living.',
+            'strength': 'Entering the location makes it active, defensive and agile.',
+            'weakness': 'Becomes slower and less active overtime.',
+        },
+        // 'template': {
+        //     'evidence': [
+        //          Remove the unused evidence from this array
+        //         'spirit-box',
+        //         'fingerprints',
+        //         'ghost-writing',
+        //         'freezing-temp',
+        //         'emf',
+        //         'ghost-orbs',
+        //         'dots',
+        //     ],
+        //     'description': 'fill this in with the journal entry description',
+        //     'strength': 'fill this with the journal entry strengths',
+        //     'weakness': 'fill this with the journal entry weaknesses',
+        // }
     }
 }
 
